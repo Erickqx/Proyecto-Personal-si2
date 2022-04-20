@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
  @section('title', 'Clina Montalvo')
- <link rel="shortcat icon" href="img/SmarHome.jpeg">    {{-- pone el icono--}} 
+
 
 @section('content_header')
     <h1>Menu de Inicio</h1>
@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-    <p>Bienvenido al panel de administrador.</p>
+    <p>Bienvenido al panel de Administrador.</p>
 @stop
 
 @section('css')
