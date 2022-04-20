@@ -1,4 +1,33 @@
-@extends('layouts.app')
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <title>Formulario Login Animado</title>
+</head>
+<body>
+    <div class="form-body">
+        <img src="{{ asset('img/logo.png') }}" alt="user-login">
+        <p class="text">Bienvenido a la Clinica Montalvo</p>
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+            <input type="text" placeholder="Email" name="email">
+            <input type="password" placeholder="Contraseña" name="password">
+            
+            <button type="submit" >
+                {{ __('Login') }}
+            </button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+{{-- /*@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -71,3 +100,4 @@
     </div>
 </div>
 @endsection
+ --}}
