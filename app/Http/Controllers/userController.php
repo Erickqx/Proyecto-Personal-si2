@@ -31,10 +31,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        // $mecanicos = DB::table('mecanicos')->whereNull('user_id')->get();
+       
         $roles = Role::all();
         return view('users.create', compact('roles'));
-        // return view('users.create', compact('mecanicos', 'roles'));
     }
 
     public function store(Request $request)
@@ -52,9 +51,7 @@ class UserController extends Controller
         $usuario->email = $request->email;
         $usuario->password = bcrypt(($request->password));
         $usuario->save();
-
         $usuario->roles()->sync($request->roles);
-
         return redirect()->route('users.index');
     }
 
@@ -74,23 +71,17 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        
         $roles = Role::all();
         $rol = DB::table('model_has_roles')->where('model_id', $user->id)->first();
         $rol_name = DB::table('roles')->where('id', $rol->role_id)->first();
-        return view('users.edit', compact('user', 'roles', 'rol', 'rol_name'));
-
-        return view('users.edit', compact('user', 'empleados', 'roles', 'rol', 'rol_name', 'empleado', 'e'));
-        return view('users.edit', compact('user'));
-        
+        return view('users.edit', compact('user', 'roles', 'rol', 'rol_name'));   
     }
 
     public function update(Request $request, User $user)
     {
         $request->validate([
             'name'=> "unique:users,name,$user->id",
-            'roles'=>'required',
-            // 'empleados'=> 'required',
+            'roles'=>'required'
         ]);
 
         $usuario = User::find($user->id);
@@ -102,7 +93,7 @@ class UserController extends Controller
         }
         $usuario->save();
         $usuario->roles()->sync($request->roles);
-        
+        return redirect()->route('users.index');
     }
 
     /**
@@ -115,6 +106,5 @@ class UserController extends Controller
     {
         User::destroy($user->id);
         return redirect('users');
-
     }
 }

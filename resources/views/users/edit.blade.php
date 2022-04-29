@@ -41,8 +41,12 @@
                     <p>Seleccione un rol</p>
                     <select name="roles" id="select-roles" class="form-control" onchange="habilitar()" >
                         <option value="{{old('roles' ,$rol->role_id)}}">{{$rol_name->name}}</option>
-                            @foreach ($roles as $rol)
-                                <option value="{{ $rol->id }}">{{ $rol->name }}</option>
+
+                            @foreach ($roles as $role)
+                                @if (!($role->id == $rol->role_id))
+                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                @endif
+                                
                             @endforeach
                     </select>
                     @error('roles')
