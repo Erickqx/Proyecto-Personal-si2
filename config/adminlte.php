@@ -249,12 +249,7 @@ return [
         ],
         
         ['header' => 'BARRA DE TAREAS'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-            'can'  => 'Gestionar Perfil',
-        ],
+        
         [
             'text' => 'Usuario',
             'route'  => 'users.index',
@@ -276,6 +271,13 @@ return [
         [
             'text' => 'Paciente',
             'route'  => 'pacientes.index',
+            'icon' => 'fa fa-user-md',
+
+        ],
+
+        [
+            'text' => 'Cita',
+            'route'  => 'citas.index',
             'icon' => 'fa fa-user-md',
 
         ],

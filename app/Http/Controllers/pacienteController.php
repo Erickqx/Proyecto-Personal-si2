@@ -94,7 +94,7 @@ class pacienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $paciente = Medico::findOrFail($id);
+        $paciente = Paciente::findOrFail($id);
 
         
         $paciente->ci = $request->input('ci');
