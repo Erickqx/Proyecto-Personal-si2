@@ -48,11 +48,13 @@ class medicoController extends Controller
         //validacion para que sea requerida si o si con esos datos o de lo contrario no deja llenar el form
 
 
-        $medico=new medico();
+        $medico=new Medico();
         $medico->nombre=$request->input('nombre');
         $medico->sexo=$request->input('sexo');
         $medico->telefono=$request->input('telefono');
         $medico->save();
+
+        
         
         $usuario= new User();
         $usuario->name =$medico->nombre;

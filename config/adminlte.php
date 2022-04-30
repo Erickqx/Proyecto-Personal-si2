@@ -272,6 +272,14 @@ return [
             'route'  => 'medicos.index',
             'icon' => 'fa fa-plus-square',
         ],
+
+        [
+            'text' => 'Paciente',
+            'route'  => 'pacientes.index',
+            'icon' => 'fa fa-user-md',
+
+        ],
+
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
