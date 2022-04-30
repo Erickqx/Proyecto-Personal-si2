@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'PROSALUD+')
+@section('title', 'Clinica Montalvo')
 
 @section('content_header')
     <h1>Lista Medicos</h1>
@@ -31,15 +31,16 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                   
                     @foreach ($medicos as $medico)
+                    <tr>
                         <td>{{ $medico->id }}</td>
                         <td>{{ $medico->nombre }}</td>
                         <td>{{ $medico->telefono }}</td>
                         <td>{{ $medico->sexo }}</td>
 
                         @foreach ($especialidades as $especialidad)
-                            @if ($medico->id = $especialidad->id_medico)
+                            @if ($medico->id == $especialidad->id_medico)
                                 <td>{{ $especialidad->nombre }}</td>
                             @endif
                         @endforeach
@@ -63,8 +64,9 @@
 
                         </td>
 
-                      
+                    </tr> 
                     @endforeach
+               
                 </tbody>
             </table>
 

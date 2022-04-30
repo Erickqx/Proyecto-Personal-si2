@@ -128,10 +128,10 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'navbar-info elevation-4',//cambia el color de la cja de despliegue
-    'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
-    'classes_topnav_nav' => 'navbar-expand',
+    'classes_sidebar' => 'navy-blue-info elevation-4',//cambia el color de la cja de despliegue
+    'classes_sidebar_nav' => 'brand-dark',
+    'classes_topnav' => 'navy-navy navbar-navy-blue',
+    'classes_topnav_nav' => 'navy-blue-expand',
     'classes_topnav_container' => 'container',
 
     /*
@@ -171,9 +171,9 @@ return [
     'right_sidebar' => false,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
-    'right_sidebar_slide' => true,
-    'right_sidebar_push' => true,
-    'right_sidebar_scrollbar_theme' => 'os-theme-light',
+    'right_sidebar_slide' => false,
+    'right_sidebar_push' => false,
+    'right_sidebar_scrollbar_theme' => 'os-theme-dark',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
     /*
@@ -230,11 +230,11 @@ return [
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
         [
             'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
 
         // Sidebar items:
@@ -258,19 +258,19 @@ return [
         [
             'text' => 'Usuario',
             'route'  => 'users.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fa fa-user-md',
 
         ],
         
         [
             'text' => 'Roles',
             'route'  => 'roles.index',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fa fa-briefcase',
         ],
         [
             'text' => 'Medicos',
             'route'  => 'medicos.index',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fa fa-plus-square',
         ],
         [
             'text'    => 'multilevel',
