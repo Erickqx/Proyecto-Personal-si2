@@ -14,9 +14,6 @@
                 @method('put')
                 <label for="nombre">Editar nombre</label>
                 <input type="text" name="nombre" class="form-control" value="{{old('nombre', $medico->nombre)}}" required><br>
-
-                <label for="email">Editar Email</label>
-                <input type="text" name="email" class="form-control" value="{{old('email', $medico->email)}}" required><br>
                 
                 <label for="telefono">Editar Telefono</label>
                 <input type="text" name="telefono" class="form-control" value="{{old('telefono', $medico->telefono)}}" required><br>

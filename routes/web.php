@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\citaController;
+use App\Http\Controllers\historialclinicoController;
 use App\Http\Controllers\medicoController;
 use App\Http\Controllers\pacienteController;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +32,4 @@ Route::resource('users', UserController::class)->names('users');
 Route::resource('medicos', medicoController::class)->names('medicos');
 Route::resource('pacientes', pacienteController::class)->names('pacientes');
 Route::resource('citas', citaController::class)->names('citas');
+Route::resource('historias', historialclinicoController::class)->names('historias');

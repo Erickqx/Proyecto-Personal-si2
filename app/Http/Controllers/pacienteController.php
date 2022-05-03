@@ -6,6 +6,7 @@ use App\Models\Medico;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class pacienteController extends Controller
 {
@@ -54,7 +55,7 @@ class pacienteController extends Controller
         $usuario->name =$paciente->nombre;
         $usuario->email =$request->input('email') ;
         $usuario->password = bcrypt($request->input('password') );
-        $usuario->id_persona = $paciente->id;
+        $usuario->cod_p = $paciente->id;
         $usuario->assignRole('Paciente');
         $usuario->save();
 
@@ -80,9 +81,9 @@ class pacienteController extends Controller
      */
     public function edit($id)
     {
-        $paciente=Paciente::findOrFail($id);
-        $user=User::where ('id_persona',$paciente->id)->first();
-        return view('pacientes.edit',compact('paciente','user'));
+        $paciente=Paciente::find($id);
+        return view('pacientes.edit',compact('paciente'));
+        
     }
 
     /**
@@ -104,13 +105,11 @@ class pacienteController extends Controller
         $paciente->direccion = $request->input('direccion');
         $paciente->save();
 
-        $user=User::where ('id_persona',$paciente->id)->first();
-        
+        $user=User::where('cod_p',$paciente->id)->first();
         $user->name = $paciente->nombre;
-        $user->email = $request->input('email');
-
         $user->save();
-        return redirect()->route('pacientes.index',$paciente); 
+
+        return redirect()->route('pacientes.index'); 
     }
 
     /**
@@ -122,8 +121,8 @@ class pacienteController extends Controller
     public function destroy($id)
     {
         $paciente= Paciente::findOrFail($id);
-
-        $user = User::where('id_persona', $paciente->id);
+        $paciente->delete();
+        $user = User::where('cod_p', $paciente->id);
         $user->delete();
                 
         return redirect()->route('pacientes.index');

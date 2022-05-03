@@ -60,7 +60,7 @@ class medicoController extends Controller
         $usuario->name =$medico->nombre;
         $usuario->email =$request->input('email') ;
         $usuario->password = bcrypt($request->input('password') );
-        $usuario->id_persona = $medico->id;
+        $usuario->cod_m = $medico->id;
         $usuario->assignRole('Medico');
         $usuario->save();
 
@@ -110,11 +110,9 @@ class medicoController extends Controller
         $medico->telefono = $request->input('telefono');
         $medico->save();
 
-        $user=User::where ('id_persona',$medico->id)->first();
+        $user=User::where ('cod_m',$medico->id)->first();
         
-        $user->name = $medico->nombre;
-        $user->email = $request->input('email');
-
+        $user->name = $medico->nombre;;
         $user->save();
         return redirect()->route('medicos.index',$medico); 
     }
@@ -133,7 +131,7 @@ class medicoController extends Controller
         $esp = Especialidad::where('id_medico', $medico->id);
         $esp->delete();
 
-        $user = User::where('id_persona', $medico->id);
+        $user = User::where('cod_m', $medico->id);
         $user->delete();
                 
         $medico->delete();

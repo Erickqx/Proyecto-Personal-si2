@@ -31,7 +31,7 @@
                         <label for="telefono">Ingresar Telefono</label>
                         <input type="number" name="telefono" class="form-control"  value="{{old('telefono')}}" id="telefono" required>
 
-                        <label for="direccion">Ingresar Telefono</label>
+                        <label for="direccion">Ingresar Direccion</label>
                         <input type="text" name="direccion" class="form-control"  value="{{old('direccion')}}" id="telefono" required>
 
                         <div>
@@ -48,7 +48,7 @@
                         <input type="text" name="email" class="form-control"  value="{{old('email')}}" id="email" required>
 
                         <label for="password">Ingresar Contraseña</label>
-                        <input type="text" name="password" class="form-control"  value="{{old('password')}}" id="password" required>
+                        <input type="number" name="password" class="form-control"  value="{{old('password')}}" id="password" required>
                         
                     
                     </div>

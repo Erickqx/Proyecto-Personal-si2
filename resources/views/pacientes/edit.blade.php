@@ -29,10 +29,7 @@
                 <label for="direccion">Editar Direccion</label>
                 <input type="text" name="direccion" class="form-control" value="{{old('telefono', $paciente->direccion)}}" required><br>
                
-                <br>  
-                
-                <label for="email">Editar Email</label>
-                <input type="text" name="email" class="form-control" value="{{old('email', $user->email)}}" required><br>                                    
+                <br>                                    
 
                 <button  class="btn btn-danger btn-sm" type="submit">Actualizar datos</button>
                 <a class="btn btn-primary btn-sm" href="{{route('pacientes.index')}}">Volver</a>
