@@ -251,6 +251,13 @@ return [
         ['header' => 'BARRA DE TAREAS'],
         
         [
+            'text' => 'Bitacora',
+            'route'  => 'Bitacora.index',
+            'icon' => 'fa fa-user-md',
+
+        ],
+
+        [
             'text' => 'Usuario',
             'route'  => 'users.index',
             'icon' => 'fa fa-user-md',

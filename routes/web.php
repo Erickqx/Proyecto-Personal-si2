@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BitacoraController;
 use App\Http\Controllers\citaController;
 use App\Http\Controllers\historialclinicoController;
 use App\Http\Controllers\medicoController;
@@ -33,3 +34,4 @@ Route::resource('medicos', medicoController::class)->names('medicos');
 Route::resource('pacientes', pacienteController::class)->names('pacientes');
 Route::resource('citas', citaController::class)->names('citas');
 Route::resource('historias', historialclinicoController::class)->names('historias');
+Route::resource('Bitacora',BitacoraController::class)->names('Bitacora');

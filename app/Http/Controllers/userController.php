@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\DB;
-
-
-
+use Spatie\Activitylog\Models\Activity;
 
 class UserController extends Controller
 {
@@ -52,6 +50,13 @@ class UserController extends Controller
         $usuario->password = bcrypt(($request->password));
         $usuario->save();
         $usuario->roles()->sync($request->roles);
+
+        date_default_timezone_set("America/La_Paz");
+        activity()->useLog('Usuarios')->log('Registró')->subject();
+        $lastActivity=Activity::all()->last();
+        $lastActivity->subject_id= $usuario->id;
+        $lastActivity->save();
+
         return redirect()->route('users.index');
     }
 
