@@ -25,6 +25,7 @@
                 <label for="email">Ingrese el correo electronico</label>
                 <input type="text" name="email" class="form-control" value="{{old('email')}}" required>
                 @error('email')
+                
                     <small>*{{$message}}</small>
                     <br><br>
                 @enderror

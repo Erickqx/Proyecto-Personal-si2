@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Clinica Montalvo')
+@section('title', 'Tu Mejor Ruta')
 
 @section('content_header')
-    <h1>Medicos</h1>
+    <h1>Chofer de Micro</h1>
 @stop
 
 @section('content')
@@ -12,7 +12,7 @@
         @error('nombre')
         <div class="alert alert-danger">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>¡Error!</strong> medico ya registrado.
+            <strong>¡Error!</strong> chofer ya registrado.
       </div>
          
         @enderror
@@ -26,7 +26,7 @@
                         <label for="nombre">Ingresar Nombre</label>
                         <input type="text" name="nombre" class="form-control"  value="{{old('nombre')}}" id="nombre" required>
 
-                        <label for="telefono">Ingresar Telefono</label>
+                        <label for="telefono">Ingresar Carnet</label>
                         <input type="number" name="telefono" class="form-control"  value="{{old('telefono')}}" id="telefono" required>
 
                         <div>
@@ -45,8 +45,8 @@
                         <label for="password">Ingresar Contraseña</label>
                         <input type="text" name="password" class="form-control"  value="{{old('password')}}" id="password" required>
 
-                        <label for="especialidad">Ingresar Especialidad</label>
-                        <input type="text" name="especialidad" class="form-control"  value="{{old('password')}}" id="password" required>
+                        <label for="especialidad">Ingresar Fecha de naciento</label>
+                        <input type="date" name="especialidad" class="form-control"  value="{{old('password')}}" id="password" required>
                         
                     
                     </div>
@@ -59,7 +59,7 @@
                     
                 </div>
                 <div class="form-group">
-                    <button  class="btn btn-primary" type="submit" value="required">Añadir medico</button>
+                    <button  class="btn btn-primary" type="submit" value="required">Añadir Chofer</button>
                     <a class="btn btn-danger" href="{{route('medicos.index')}}">Volver</a>
                 </div>
                 

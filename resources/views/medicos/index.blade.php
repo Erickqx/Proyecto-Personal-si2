@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Clinica Montalvo')
+@section('title', 'Tu Mejor Ruta')
 
 @section('content_header')
-    <h1>Lista Medicos</h1>
+    <h1>Lista Choferes</h1>
 @stop
 @section('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
@@ -14,7 +14,7 @@
     <div class="card">
         <div class="card-header">
 
-            <a class="btn btn-primary" href="{{ route('medicos.create') }}">Registrar Medico</a>
+            <a class="btn btn-primary" href="{{ route('medicos.create') }}">Registrar Chofer</a>
 
         </div>
         <div class="card-body">
@@ -22,10 +22,10 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nombre de Medico</th>
-                        <th scope="col">Telefono</th>
+                        <th scope="col">Nombre de Chofer</th>
+                        <th scope="col">Carnet</th>
                         <th scope="col">Sexo</th>
-                        <th scope="col">Especialidad</th>
+                        <th scope="col">Fecha de nacimiento</th>
                         <th scope="col">Opciones</th>
 
                     </tr>
@@ -35,9 +35,10 @@
                     @foreach ($medicos as $medico)
                     <tr>
                         <td>{{ $medico->id }}</td>
-                        <td>{{ $medico->nombre }}</td>
-                        <td>{{ $medico->telefono }}</td>
+                        <td>{{ $medico->nombre  }}</td>
+                        <td>{{ $medico->carnet }}</td>
                         <td>{{ $medico->sexo }}</td>
+                        <td>{{ $medico->fecha_de_nacimiento}}</td>   
 
                         @foreach ($especialidades as $especialidad)
                             @if ($medico->id == $especialidad->id_medico)

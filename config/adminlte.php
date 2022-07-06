@@ -45,13 +45,12 @@ return [
     |
     */
 
-    'logo' => 'Clinica Montalvo',//Cambia el nombre de clinica montalvo
-    'logo_img' => 'img/logo.png',//modifica la imagen del logo(este apartado esta echo para )
+    'logo' => 'Tu Micro',//Cambia el nombre de clinica montalvo
+    'logo_img' => 'img/Micro_linea72.jpg',//modifica la imagen del logo(este apartado esta echo para )
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'AdminLTE',
-
     /*
     |--------------------------------------------------------------------------
     | User Menu
@@ -270,13 +269,13 @@ return [
             'icon' => 'fa fa-briefcase',
         ],
         [
-            'text' => 'Medicos',
-            'route'  => 'medicos.index',
-            'icon' => 'fa fa-plus-square',
+           'text' => 'Chofer de Micro',
+       'route'  => 'medicos.index',
+        'icon' => 'fa fa-plus-square',
         ],
 
         [
-            'text' => 'Paciente',
+            'text' => 'Secretaria',
             'route'  => 'pacientes.index',
             'icon' => 'fa fa-user-md',
 
