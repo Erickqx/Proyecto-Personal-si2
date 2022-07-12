@@ -34,4 +34,13 @@ Route::resource('medicos', medicoController::class)->names('medicos');
 Route::resource('pacientes', pacienteController::class)->names('pacientes');
 Route::resource('citas', citaController::class)->names('citas');
 Route::resource('historias', historialclinicoController::class)->names('historias');
-Route::resource('Bitacora',BitacoraController::class)->names('Bitacora');
+Route::resource('Bitacora', BitacoraController::class)->names('Bitacora');
+
+//Choferes
+Route::get('choferes/index', [App\Http\Controllers\ChoferController::class, 'index'])->name('choferes.index');
+Route::get('choferes/create', [App\Http\Controllers\ChoferController::class, 'create'])->name('choferes.create');
+Route::post('choferes/store', [App\Http\Controllers\ChoferController::class, 'store'])->name('choferes.store');
+Route::get('choferes/edit/{id}', [App\Http\Controllers\ChoferController::class, 'edit'])->name('choferes.edit');
+Route::put('choferes/update/{id}', [App\Http\Controllers\ChoferController::class, 'update'])->name('choferes.update');
+Route::delete('choferes/{id}', [App\Http\Controllers\ChoferController::class, 'destroy'])->name('choferes.destroy');
+/* Route::get('choferes/show/{id}', [App\Http\Controllers\ChoferController::class, 'show'])->name('choferes.show'); */

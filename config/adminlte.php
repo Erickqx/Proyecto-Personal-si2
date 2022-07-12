@@ -270,11 +270,11 @@ return [
         ],
         [
            'text' => 'Chofer de Micro',
-       'route'  => 'medicos.index',
+       'route'  => 'choferes.index',
         'icon' => 'fa fa-plus-square',
         ],
 
-        [
+        /* [
             'text' => 'Secretaria',
             'route'  => 'pacientes.index',
             'icon' => 'fa fa-user-md',
@@ -293,7 +293,7 @@ return [
             'route'  => 'historias.index',
             'icon' => 'fa fa-user-md',
 
-        ],
+        ], */
 
         
     ],

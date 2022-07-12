@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Clinica Montalvo')
+@section('title', 'TuMejorRuta')
 
 @section('content_header')
     <h1>Roles</h1>

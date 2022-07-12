@@ -18,21 +18,24 @@ class userSeeder extends Seeder
         $user->name='admin';
         $user->email='admin@gmail.com';
         $user->password=bcrypt('1234');
+        $user->cargo='Administrador';
         $user->assignRole('Administrador');//bcrypt encripta la contraseña 
         $user->save();//save con
 
         $user=new User() ;
-        $user->name='Paciente';
-        $user->email='paciente@gmail.com';
+        $user->name='Secretaria';//Paciente
+        $user->email='Secretaria@gmail.com';//paciente@gmail.com
         $user->password=bcrypt('1234');
-        $user->assignRole('Paciente');//bcrypt encripta la contraseña 
+        $user->cargo='Secretaria';
+        $user->assignRole('Secretaria');//bcrypt encripta la contraseña 
         $user->save();//save con
 
         $user=new User() ;
-        $user->name='Medico Montalvo';
-        $user->email='medico@gmail.com';
+        $user->name='Chofer';//Medico Montalvo
+        $user->email='Chofer@gmail.com';//medico@gmail.com
         $user->password=bcrypt('1234');
-        $user->assignRole('Medico');//bcrypt encripta la contraseña 
+        $user->cargo='Chofer';
+        $user->assignRole('Chofer');//bcrypt encripta la contraseña 
         $user->save();//save con
 
 
